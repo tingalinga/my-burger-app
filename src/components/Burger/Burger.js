@@ -3,13 +3,26 @@ import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
 import classes from "./Burger.module.css";
 
 const burger = (props) => {
+  let transformedIngredients = Object.keys(props.ingredients)
+    .map((ingredient) => {
+      return [...Array(props.ingredients[ingredient])].map((_, index) => {
+        return <BurgerIngredient key={ingredient + 1} type={ingredient} />;
+      });
+    })
+    .reduce((arr, el) => {
+      return arr.concat(el);
+    }, []);
+
+  console.log(transformedIngredients);
+
+  if (transformedIngredients.length === 0) {
+    transformedIngredients = <p>Please add some ingredients!</p>;
+  }
+
   return (
     <div className={classes.Burger}>
       <BurgerIngredient type="bread-top" />
-      <BurgerIngredient type="salad" />
-      <BurgerIngredient type="bacon" />
-      <BurgerIngredient type="cheese" />
-      <BurgerIngredient type="meat" />
+      {transformedIngredients}
       <BurgerIngredient type="bread-bottom" />
     </div>
   );
