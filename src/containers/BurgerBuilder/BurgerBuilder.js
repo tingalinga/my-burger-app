@@ -28,6 +28,14 @@ class BurgerBuilder extends Component {
     this.setState({ ordering: true });
   };
 
+  cancelOrderingStateHandler = () => {
+    this.setState({ ordering: false });
+  };
+
+  continueOrderingStateHandler = () => {
+    alert("continuing!!");
+  };
+
   updatePurchaseState = (ingredients) => {
     const sum = Object.keys(ingredients)
       .map((ingredient) => ingredients[ingredient])
@@ -82,8 +90,16 @@ class BurgerBuilder extends Component {
 
     return (
       <Fragment>
-        <Modal show={this.state.ordering}>
-          <OrderSummary ingredientsSummary={this.state.ingredients} />
+        <Modal
+          show={this.state.ordering}
+          close={this.cancelOrderingStateHandler}
+        >
+          <OrderSummary
+            ingredientsSummary={this.state.ingredients}
+            price={this.state.price}
+            cancel={this.cancelOrderingStateHandler}
+            continue={this.continueOrderingStateHandler}
+          />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BuildControls
