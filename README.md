@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # My Burger App
+
 ![Prettier](https://github.com/tingalinga/my-burger-app/workflows/CI/badge.svg?branch=master)
 
 ## Available Scripts
