@@ -2,6 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # My Burger App
 
+Prettier Check
 ![Prettier](https://github.com/tingalinga/my-burger-app/workflows/CI/badge.svg?branch=master)
 
 ## Available Scripts
@@ -70,7 +71,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-# my-burger-app
-
-# my-burger-app
